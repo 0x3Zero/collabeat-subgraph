@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "CollaBeatUtility": {
+      "address": "0xef7e2f7d3dedac01367652f661b468d3438c139b",
+      "startBlock": 8625707
+    }
+  }
+}
