@@ -33,9 +33,9 @@
       },
       {
         "indexed": false,
-        "internalType": "string",
-        "name": "cid",
-        "type": "string"
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
       }
     ],
     "name": "Forked",
@@ -163,7 +163,11 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "string", "name": "cid", "type": "string" }],
+    "inputs": [
+      { "internalType": "string", "name": "name", "type": "string" },
+      { "internalType": "string", "name": "ipfs_address", "type": "string" },
+      { "internalType": "string", "name": "cid", "type": "string" }
+    ],
     "name": "fork",
     "outputs": [],
     "stateMutability": "payable",

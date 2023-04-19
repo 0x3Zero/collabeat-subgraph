@@ -12,7 +12,7 @@ export function createForkedEvent(
   from: Address,
   tokenId: BigInt,
   dataKey: string,
-  cid: string
+  data: Bytes
 ): Forked {
   let forkedEvent = changetype<Forked>(newMockEvent())
 
@@ -31,7 +31,7 @@ export function createForkedEvent(
     new ethereum.EventParam("dataKey", ethereum.Value.fromString(dataKey))
   )
   forkedEvent.parameters.push(
-    new ethereum.EventParam("cid", ethereum.Value.fromString(cid))
+    new ethereum.EventParam("data", ethereum.Value.fromBytes(data))
   )
 
   return forkedEvent

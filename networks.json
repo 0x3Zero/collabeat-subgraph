@@ -1,8 +1,11 @@
 {
-  "goerli": {
-    "CollaBeatUtility": {
-      "address": "0xef7e2f7d3dedac01367652f661b468d3438c139b",
-      "startBlock": 8625707
-    }
-  }
+	"mumbai": {
+		"CollaBeatUtility": {
+			"address": "0xD5123C9FB1206497E2e54fd1120AA2F896e273E9",
+			"startBlock": 34529553
+		},
+		"CollaBeatNft": {
+			"address": "0x0692f233614802D06e86CBDE6b5D090A9F5d3c10"
+		}
+	}
 }

@@ -35,8 +35,8 @@ export class Forked__Params {
     return this._event.parameters[2].value.toString();
   }
 
-  get cid(): string {
-    return this._event.parameters[3].value.toString();
+  get data(): Bytes {
+    return this._event.parameters[3].value.toBytes();
   }
 }
 
@@ -376,8 +376,16 @@ export class ForkCall__Inputs {
     this._call = call;
   }
 
-  get cid(): string {
+  get name(): string {
     return this._call.inputValues[0].value.toString();
+  }
+
+  get ipfs_address(): string {
+    return this._call.inputValues[1].value.toString();
+  }
+
+  get cid(): string {
+    return this._call.inputValues[2].value.toString();
   }
 }
 

@@ -3,7 +3,7 @@ type Forked @entity(immutable: true) {
 	from: Bytes! # address
 	tokenId: BigInt! # uint256
 	dataKey: String! # string
-	cid: String! # string
+	data: Bytes! # bytes
 	blockNumber: BigInt!
 	blockTimestamp: BigInt!
 	transactionHash: Bytes!
@@ -14,6 +14,96 @@ type Minted @entity(immutable: true) {
 	from: Bytes! # address
 	tokenId: BigInt! # uint256
 	amount: BigInt! # uint256
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+
+type RoleAdminChanged @entity(immutable: true) {
+	id: Bytes!
+	role: Bytes! # bytes32
+	previousAdminRole: Bytes! # bytes32
+	newAdminRole: Bytes! # bytes32
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+
+type RoleGranted @entity(immutable: true) {
+	id: Bytes!
+	role: Bytes! # bytes32
+	account: Bytes! # address
+	sender: Bytes! # address
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+
+type RoleRevoked @entity(immutable: true) {
+	id: Bytes!
+	role: Bytes! # bytes32
+	account: Bytes! # address
+	sender: Bytes! # address
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+type ApprovalForAll @entity(immutable: true) {
+	id: Bytes!
+	account: Bytes! # address
+	operator: Bytes! # address
+	approved: Boolean! # bool
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+
+type CollaBeatNftMinted @entity(immutable: true) {
+	id: Bytes!
+	to: Bytes! # address
+	tokenId: BigInt! # uint256
+	data: Bytes! # bytes
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+
+type TransferBatch @entity(immutable: true) {
+	id: Bytes!
+	operator: Bytes! # address
+	from: Bytes! # address
+	to: Bytes! # address
+	ids: [BigInt!]! # uint256[]
+	values: [BigInt!]! # uint256[]
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+
+type TransferSingle @entity(immutable: true) {
+	id: Bytes!
+	operator: Bytes! # address
+	from: Bytes! # address
+	to: Bytes! # address
+	CollaBeatNft_id: BigInt! # uint256
+	value: BigInt! # uint256
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+
+type URI @entity(immutable: true) {
+	id: Bytes!
+	value: String! # string
+	CollaBeatNft_id: BigInt! # uint256
+	blockNumber: BigInt!
+	blockTimestamp: BigInt!
+	transactionHash: Bytes!
+}
+
+type Unpaused @entity(immutable: true) {
+	id: Bytes!
+	account: Bytes! # address
 	blockNumber: BigInt!
 	blockTimestamp: BigInt!
 	transactionHash: Bytes!
