@@ -6,7 +6,7 @@ dataSources:
     name: CollaBeatUtility
     network: goerli
     source:
-      address: "0xef7e2f7d3dedac01367652f661b468d3438c139b"
+      address: '0xef7e2f7d3dedac01367652f661b468d3438c139b'
       abi: CollaBeatUtility
       startBlock: 8625707
     mapping:
@@ -16,9 +16,6 @@ dataSources:
       entities:
         - Forked
         - Minted
-        - RoleAdminChanged
-        - RoleGranted
-        - RoleRevoked
       abis:
         - name: CollaBeatUtility
           file: ./abis/CollaBeatUtility.json
@@ -27,10 +24,4 @@ dataSources:
           handler: handleForked
         - event: Minted(address,uint256,uint256)
           handler: handleMinted
-        - event: RoleAdminChanged(indexed bytes32,indexed bytes32,indexed bytes32)
-          handler: handleRoleAdminChanged
-        - event: RoleGranted(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleGranted
-        - event: RoleRevoked(indexed bytes32,indexed address,indexed address)
-          handler: handleRoleRevoked
       file: ./src/colla-beat-utility.ts
